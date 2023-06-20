@@ -1,0 +1,55 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://senzing.com/senzingapi-responses.json",
+    "title": "Senzing Response JSON",
+    "description": "Definition of JSON responses returned by the Senzing API",
+    "type": "object",
+    "$defs": {
+        "Datasource": {
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "$id": "Datasource",
+            "description": "Definition of a DataSource",
+            "type": "object",
+            "properties": {
+                "DSRC_ID": {
+                    "type": "integer"
+                },
+                "DSRC_CODE": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DSRC_ID"
+            ]
+        },
+        "G2configAddDatasourceResponse": {
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "$id": "G2configAddDatasourceResponse",
+            "description": "Definition of a DataSource",
+            "type": "object",
+            "properties": {
+                "DSRC_ID": {
+                    "type": "integer"
+                }
+            }
+        },
+        "G2configListDataSourcesResponse": {
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "$id": "G2configListDataSourcesResponse",
+            "description": "Definition of a DataSource",
+            "type": "object",
+            "properties": {
+                "DATA_SOURCES": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "Datasource"
+                    }
+                }
+            },
+            "required": [
+                "DATA_SOURCES"
+            ]
+        }
+    },
+    "$ref": "#/$defs/G2configListDataSourcesResponse"
+}
